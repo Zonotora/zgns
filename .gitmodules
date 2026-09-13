@@ -1,0 +1,6 @@
+[submodule "libs/GameNetworkingSockets"]
+	path = libs/GameNetworkingSockets
+	url = https://github.com/ValveSoftware/GameNetworkingSockets.git
+[submodule "libs/raylib"]
+	path = libs/raylib
+	url = https://github.com/raysan5/raylib.git
