@@ -183,12 +183,12 @@ pub fn main(process: std.process.Init) !void {
     while (!raylib.WindowShouldClose()) {
         try interface.poll();
 
-        interface.read(&event_queue) catch {
-            std.debug.print("read error\n", .{});
+        interface.read(&event_queue) catch |err| {
+            std.debug.print("read error={}\n", .{err});
         };
 
-        interface.send(player.serialize(&seralize_buf)) catch {
-            std.debug.print("send error\n", .{});
+        interface.send(player.serialize(&seralize_buf)) catch |err| {
+            std.debug.print("send error={}\n", .{err});
         };
 
         while (event_queue.pop()) |event| {
