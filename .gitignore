@@ -1,4 +1,5 @@
 site
+__pycache__/
 
 
 # This file is for zig-specific build artifacts.

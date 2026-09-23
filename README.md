@@ -110,14 +110,41 @@ will fetch GameNetworkingSockets and build that automatically along with the zig
 
 Two examples:
 
-- Chat
+- Chat (TODO: Currently unstable)
 - Small platformer (using Raylib)
+
+### Chat
+
+In separate terminals, run:
+
+```sh
+zig build run-server
+zig build run-client
+```
+
+The server accepts clients on port `27001` and forwards each message to the
+other clients. The client reads lines from stdin.
 
 ### Build game
 
 ```sh
 git submodule update --init thirdparty/raylib
 zig build run-game -- --server
-# In another terminal
+```
+
+In another terminal (to start the client)
+
+```sh
 zig build run-game
+```
+
+## Documentation
+
+### Local
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install zensical
+zensical serve
 ```
